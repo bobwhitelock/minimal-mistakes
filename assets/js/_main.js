@@ -90,13 +90,13 @@ $(document).ready(function(){
       success: function (data) {
         $('#comment-form-submit').html('Submitted').addClass('btn--disabled');
         $('#comment-form .js-notice').removeClass('notice--danger').addClass('notice--success');
-        showAlert('<strong>Thanks for your comment!</strong> It is <a href="https://github.com/mmistakes/made-mistakes-jekyll/pulls">currently pending</a> and will show on the site once approved.');
+        showAlert('<strong>Thanks for your comment!</strong> It should show up on the site shortly.');
       },
       error: function (err) {
         console.log(err);
         $('#comment-form-submit').html('Submit Comment');
         $('#comment-form .js-notice').removeClass('notice--success').addClass('notice--danger');
-        showAlert('<strong>Sorry, there was an error with your submission.</strong> Please make sure all required fields have been completed and try again.');
+        showAlert("<strong>Sorry, there was an error with your submission.</strong> Please make sure all required fields have been completed and try again. If this error persists please <a href='https://github.com/bobwhitelock/bobwhitelock.co.uk/issues'>open an issue</a>.");
         $(form).removeClass('disabled');
       }
     });
